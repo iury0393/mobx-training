@@ -12,10 +12,12 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.2
-  mobx: ^2.0.1
-  flutter_mobx: ^2.0.0
+  mobx:
+  flutter_mobx:
 
 dev_dependencies:
+  mobx_codegen:
+  build_runner:
   flutter_test:
     sdk: flutter
 
