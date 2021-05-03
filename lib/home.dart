@@ -11,18 +11,26 @@ class HomeWidget extends StatelessWidget {
       appBar: AppBar(
         title: Text('MobX'),
       ),
-      body: Center(
-        child: Observer(
-          builder: (_) {
-            return Text(
-              '${controller.counter}',
-              style: Theme.of(context).textTheme.headline4,
-            );
-          },
-        ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          TextField(
+            decoration: InputDecoration(labelText: 'Nome'),
+            onChanged: controller.mudarNome,
+          ),
+          SizedBox(height: 20),
+          TextField(
+            decoration: InputDecoration(labelText: 'Sobrenome'),
+            onChanged: controller.mudarSobrenome,
+          ),
+          SizedBox(height: 20),
+          Observer(builder: (_) {
+            return Text('${controller.nomeCompleto}');
+          }),
+        ],
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () => controller.increment(),
+        onPressed: () => {},
         tooltip: 'Increment',
         child: Icon(Icons.add),
       ),
